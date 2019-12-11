@@ -102,7 +102,10 @@ class Point:
         return Point(self._point_x * other._point_x, self._point_y * other._point_y, self._point_z * other._point_z)
 
     def __truediv__(self, other):
-        return Point(self._point_x / other._point_x, self._point_y / other._point_y, self._point_z / other._point_z)
+        try:
+            return Point(self._point_x / other._point_x, self._point_y / other._point_y, self._point_z / other._point_z)
+        except ZeroDivisionError:
+            print('Деление на ноль')
 
     def _get_result(self):
         res = [self._point_x, self._point_y, self._point_z]
