@@ -52,18 +52,12 @@ class Queue:
     def isempty(self):
         return self.items == []
 
-    def push(self, item):
+    def enqueue(self, item):
         self.items.insert(0,item)
 
-    def pop(self):
+    def dequeue(self):
         try:
             return self.items.pop()
-        except IndexError:
-            return f'Error: queue is empty'
-
-    def peek(self):
-        try:
-            return self.items[0]
         except IndexError:
             return f'Error: queue is empty'
 
@@ -72,13 +66,14 @@ class Queue:
 
 
 s = Queue()
-s.push('one')
-s.push('two')
-s.push('three')
-print(s.pop())
-print(s.pop())
-print(s.pop())
+s.enqueue('one')
+s.enqueue('two')
+s.enqueue('three')
+print(s.dequeue())
+print(s.dequeue())
+print(s.dequeue())
 print(s.size())
+print(s.isempty())
 
 
 print('Задание №3 Complex number', '\n', '*' * 30)
