@@ -22,18 +22,19 @@ class Stack:
 s = Stack()
 
 print(s.isEmpty())
-s.push(4)
-s.push('dog')
+s.push('one')
+s.push('two')
 print(s.peek())
-s.push(True)
+s.push('three')
+s.push('four')
 print(s.size())
 print(s.isEmpty())
-s.push(8.4)
+print(s.pop())
 print(s.pop())
 print(s.pop())
 print(s.size())
 
-print('Задание №2 Stack FiFo', '\n', '*' * 30)
+print('Задание №2 Stack/queue FiFo', '\n', '*' * 30)
 class Stack2:
     def __init__(self):
         self.items = []
@@ -45,7 +46,7 @@ class Stack2:
         self.items.insert(0,item)
 
     def pop(self):
-        return self.items.pop(0)
+        return self.items.pop()
 
     def peek(self):
         return self.items[0]
@@ -53,7 +54,12 @@ class Stack2:
     def size(self):
         return len(self.items)
 
+
 s = Stack2()
-s.push('hello')
-s.push('true')
+s.push('one')
+s.push('two')
+s.push('three')
 print(s.pop())
+print(s.pop())
+print(s.pop())
+print(s.size())
