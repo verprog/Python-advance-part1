@@ -1,19 +1,27 @@
-print('Задание №1 LiFo','\n','*' * 30)
+print('Задание №1 Stack','\n','*' * 30)
+
+
 class Stack:
     def __init__(self):
         self.items = []
 
-    def isEmpty(self):
+    def isempty(self):
         return self.items == []
 
     def push(self, item):
         self.items.append(item)
 
     def pop(self):
-        return self.items.pop()
+        try:
+            return self.items.pop()
+        except IndexError:
+            return f'Error: stack is empty'
 
     def peek(self):
-        return self.items[len(self.items) - 1]
+        try:
+            return self.items[-1]
+        except IndexError:
+            return f'Error: stack is empty'
 
     def size(self):
         return len(self.items)
@@ -21,41 +29,49 @@ class Stack:
 
 s = Stack()
 
-print(s.isEmpty())
+print(s.isempty())
 s.push('one')
 s.push('two')
 print(s.peek())
 s.push('three')
 s.push('four')
 print(s.size())
-print(s.isEmpty())
+print(s.isempty())
 print(s.pop())
 print(s.pop())
 print(s.pop())
 print(s.size())
 
-print('Задание №2 Stack/queue FiFo', '\n', '*' * 30)
-class Stack2:
+print('Задание №2 Queue', '\n', '*' * 30)
+
+
+class Queue:
     def __init__(self):
         self.items = []
 
-    def isEmpty(self):
+    def isempty(self):
         return self.items == []
 
     def push(self, item):
         self.items.insert(0,item)
 
     def pop(self):
-        return self.items.pop()
+        try:
+            return self.items.pop()
+        except IndexError:
+            return f'Error: queue is empty'
 
     def peek(self):
-        return self.items[0]
+        try:
+            return self.items[0]
+        except IndexError:
+            return f'Error: queue is empty'
 
     def size(self):
         return len(self.items)
 
 
-s = Stack2()
+s = Queue()
 s.push('one')
 s.push('two')
 s.push('three')
